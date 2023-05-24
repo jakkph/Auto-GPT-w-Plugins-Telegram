@@ -323,4 +323,4 @@ We appreciate your contribution of a plugin to the project!
 ## Get Help
 
 For more information, visit the [discord](https://discord.gg/autogpt) server.
-</details>"# Auto-GPT-w-Plugins" 
+</details>
