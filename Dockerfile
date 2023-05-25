@@ -22,7 +22,7 @@ ENV PATH="$PATH:/root/.local/bin"
 COPY requirements.txt .
 
 # Set the entrypoint
-ENTRYPOINT ["python", "-m", "autogpt", "-y", "-c", "--debug", "--install-plugin-deps"]
+ENTRYPOINT ["python", "-m", "autogpt", "-y", "-c", "-P", "prompt_settings.yaml", "--install-plugin-deps"]
 
 # dev build -> include everything
 FROM autogpt-base as autogpt-dev
@@ -40,4 +40,4 @@ ONBUILD COPY scripts/ ./scripts
 ONBUILD COPY plugins/ ./plugins
 ONBUILD RUN mkdir ./data
 
-FROM autogpt-${BUILD_TYPE} AS auto-gpt
+FROM autogpt-${BUILD_TYPE} AS auto-gpt-w-plugins
